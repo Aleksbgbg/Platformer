@@ -27,7 +27,7 @@
         [Range(0.0f, 1.0f)]
         [SerializeAs("Speed Fraction When Crouched")]
         [SerializeField]
-        private float _speedFractionWhenCrouched = 0.36f;
+        private float _speedFractionWhenCrouched = 0.8f;
 
         [Range(0, 0.3f)]
         [SerializeAs("Movement Smoothing")]
@@ -107,7 +107,7 @@
                 }
 
                 Vector3 targetVelocity = new Vector2(movement * 10.0f, _rigidbody.velocity.y);
-
+                
                 _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref _velocity, _movementSmoothing);
 
                 if ((movement > 0 && !_facingRight) || (movement < 0 && _facingRight))
