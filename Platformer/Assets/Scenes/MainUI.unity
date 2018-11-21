@@ -2092,9 +2092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5860a89eaba3a174483b86fbe020b858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subScore: {fileID: 1065814228}
-  target: {fileID: 0}
-  smoothTime: 0.3
+  _smoothTime: 0.3
+  _subScore: {fileID: 1065814228}
 --- !u!1 &1065814226
 GameObject:
   m_ObjectHideFlags: 0

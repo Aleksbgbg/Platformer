@@ -1,67 +1,73 @@
-﻿using System;
-
-namespace Scripts
+﻿namespace Scripts.UI
 {
-	using System.Collections;
-	using System.Collections.Generic;
-	using UnityEngine;
-	using UnityEngine.UI;
+    using System.Collections;
 
-	public class ScoreScript: MonoBehaviour
-	{
+    using UnityEngine;
+    using UnityEngine.UI;
 
-		private int scoreValue = 0;
-		private Text score;
-		public Text subScore;
-		public Transform target;
-		public float smoothTime = 0.3F;
-		private Vector3 velocity = Vector3.zero;
-		private Transform subScoreTransformation;
-		private bool IsMoving = false;
-		private Transform scoreTransform;
+    public class ScoreScript : MonoBehaviour
+    {
+        [SerializeField]
+        private float _smoothTime = 0.3f;
+
+        [SerializeField]
+        private Text _subScore;
+
+        private bool _isMoving;
+
+        private int _scoreValue;
+
+        private Vector3 _velocity;
+
+        private Transform _subScoreTransform;
+
+        private Transform _scoreTransform;
+
+        private Text _score;
 
         public void OnCollectiblePickedUp()
         {
-            ScoreIncrease(10);
+            IncreaseScore(10);
         }
 
-		void MoveSubScore()
-		{
-			Debug.Log("helsosd");
-			subScoreTransformation.position = Vector3.SmoothDamp(subScoreTransformation.position, scoreTransform.position, ref velocity, smoothTime);
-		}
-		
-		private IEnumerator DisappearSubScore()
-		{
-			yield return new WaitForSeconds(1.0f);
+        private void MoveSubScore()
+        {
+            _subScoreTransform.position = Vector3.SmoothDamp(_subScoreTransform.position, _scoreTransform.position, ref _velocity, _smoothTime);
+        }
 
-			subScore.text = string.Empty;
-			IsMoving = false;
-			subScoreTransformation.position = new Vector3(subScoreTransformation.position.x, 93.2f, 0f);
-		}
+        private IEnumerator HideSubScore()
+        {
+            yield return new WaitForSeconds(1.0f);
 
-		private void ScoreIncrease(int increase)
-		{
-			IsMoving = true;
-			subScore.text = "+" + increase.ToString();
-			StartCoroutine(DisappearSubScore());
-			scoreValue += increase;
-			score.text = scoreValue.ToString();
-		}
+            _subScore.text = string.Empty;
+            _isMoving = false;
+            _subScoreTransform.position = new Vector3(_subScoreTransform.position.x, 93.2f, 0f);
+        }
 
-		void Awake()
-		{
-			score = GetComponent<Text>();
-			scoreTransform = GetComponent<Transform>();
-			subScoreTransformation = subScore.GetComponent<Transform>();
-		}
+        private void IncreaseScore(int increase)
+        {
+            _isMoving = true;
+            _subScore.text = string.Concat("+", increase);
 
-		private void Update()
-		{
-			if (IsMoving)
-			{
-				MoveSubScore();
-			}
-		}
-	}
-} 
+            StartCoroutine(HideSubScore());
+
+            _scoreValue += increase;
+            _score.text = _scoreValue.ToString();
+        }
+
+        private void Awake()
+        {
+            _score = GetComponent<Text>();
+            _scoreTransform = GetComponent<Transform>();
+            _subScoreTransform = _subScore.GetComponent<Transform>();
+        }
+
+        private void Update()
+        {
+            if (_isMoving)
+            {
+                MoveSubScore();
+            }
+        }
+    }
+}
