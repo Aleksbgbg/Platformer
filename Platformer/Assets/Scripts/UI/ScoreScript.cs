@@ -20,6 +20,10 @@ namespace Scripts
 		private bool IsMoving = false;
 		private Transform scoreTransform;
 
+        public void OnCollectiblePickedUp()
+        {
+            ScoreIncrease(10);
+        }
 
 		void MoveSubScore()
 		{
@@ -36,7 +40,7 @@ namespace Scripts
 			subScoreTransformation.position = new Vector3(subScoreTransformation.position.x, 93.2f, 0f);
 		}
 
-		public void ScoreIncrease(int increase)
+		private void ScoreIncrease(int increase)
 		{
 			IsMoving = true;
 			subScore.text = "+" + increase.ToString();

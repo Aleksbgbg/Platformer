@@ -1,28 +1,23 @@
-﻿using UnityEngine.UI;
-
-namespace Scripts.Collectibles
+﻿namespace Scripts.Collectibles
 {
     using UnityEngine;
-    using Scripts;
+    using UnityEngine.Events;
 
     public class CollectibleCollision : MonoBehaviour
     {
+        public UnityEvent CollisionFinished;
+
         private Animator _gemAnimator;
-        private ScoreScript _scoreScript;
-        [SerializeField]
-        private Text _text;
-        
 
         public void OnDestroyAnimationFinished()
         {
-            _scoreScript.ScoreIncrease(10);
+            CollisionFinished.Invoke();
             Destroy(gameObject);
         }
 
         private void Awake()
         {
             _gemAnimator = gameObject.GetComponent<Animator>();
-            _scoreScript = _text.GetComponent<ScoreScript>();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
