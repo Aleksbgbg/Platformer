@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2769a52437c72a4498da6b89ee52824c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 1229916239}
   _levels:
   - {fileID: 4562966959348316, guid: 99fa04c4aaef46441b8c64a809f22cc6, type: 2}
   - {fileID: 4092010943663598, guid: aa39a9761ee7ce04b8ec523d8532b5d4, type: 2}
@@ -357,6 +358,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcfb342ad23e3a4469cc3459ecced496, type: 2}
   m_IsPrefabAsset: 0
+--- !u!20 &1229916239 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20730774527452666, guid: 4cbb6cb3dacb3f947a81d6767a483233,
+    type: 2}
+  m_PrefabInternal: {fileID: 203542506}
 --- !u!1001 &1638137723
 Prefab:
   m_ObjectHideFlags: 0
