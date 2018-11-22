@@ -1326,7 +1326,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6de9448387b5347a985ab8aef32dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 0}
+  CollisionFinished:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &730280328
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1534,7 +1538,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6de9448387b5347a985ab8aef32dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 0}
+  CollisionFinished:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &781780934
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1976,7 +1984,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6de9448387b5347a985ab8aef32dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 0}
+  CollisionFinished:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &1185553058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2094,7 +2106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6de9448387b5347a985ab8aef32dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 0}
+  CollisionFinished:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &1315268660
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2311,6 +2327,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95289536240384406, guid: 6e8e244b2c4b3ff418df9deff8191dbe,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e8e244b2c4b3ff418df9deff8191dbe, type: 2}
   m_IsPrefabAsset: 0
@@ -2415,7 +2436,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1640509301}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00000047683716, y: -0.27999997, z: -10}
+  m_LocalPosition: {x: -0.00000023841858, y: -0.27999997, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1733647306}
@@ -4552,7 +4573,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1726713853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000047683716, y: -0.27999997, z: -10}
+  m_LocalPosition: {x: -0.00000023841858, y: -0.27999997, z: -10}
   m_LocalScale: {x: 1.225, y: 1, z: 1}
   m_Children:
   - {fileID: 1918140177}
@@ -4705,7 +4726,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6de9448387b5347a985ab8aef32dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 0}
+  CollisionFinished:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &1876983472
 BoxCollider2D:
   m_ObjectHideFlags: 0
