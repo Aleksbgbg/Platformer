@@ -4,17 +4,17 @@
 
     public class PlayerEnemyCollision : MonoBehaviour
     {
-        private Animator _animator;
-
         private PlayerController _playerController;
+
+        private PlayerDeathController _playerDeathController;
 
         private Rigidbody2D _rigidBody;
 
         private void Awake()
         {
-            _animator = GetComponent<Animator>();
-            _playerController = gameObject.GetComponent<PlayerController>();
-            _rigidBody = gameObject.GetComponent<Rigidbody2D>();
+            _playerController = GetComponent<PlayerController>();
+            _playerDeathController = GetComponentInChildren<PlayerDeathController>();
+            _rigidBody = GetComponent<Rigidbody2D>();
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -27,7 +27,7 @@
                 }
                 else
                 {
-                    _animator.SetTrigger("IsDead");
+                    _playerDeathController.BeginDeath();
                 }
             }
         }
