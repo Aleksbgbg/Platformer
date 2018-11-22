@@ -24,8 +24,8 @@
 
         private void Awake()
         {
-            _rigidBody = gameObject.GetComponent<Rigidbody2D>();
-            _patrolEndpoint = gameObject.GetComponentsInChildren<Transform>().Single(childTransform => childTransform.name == "PatrolEndpoint");
+            _rigidBody = GetComponent<Rigidbody2D>();
+            _patrolEndpoint = GetComponentsInChildren<Transform>().Single(childTransform => childTransform.name == "PatrolEndpoint");
 
             _startPosition = new Vector2(_rigidBody.position.x, 0.0f);
             _endPosition = new Vector2(_patrolEndpoint.position.x, 0.0f);

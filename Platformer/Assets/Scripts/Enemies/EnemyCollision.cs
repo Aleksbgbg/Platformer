@@ -19,10 +19,10 @@
 
         private void Awake()
         {
-            _animator = gameObject.GetComponent<Animator>();
-            _rigidBody = gameObject.GetComponent<Rigidbody2D>();
-            _capsuleCollider = gameObject.GetComponent<CapsuleCollider2D>();
-            _movement = gameObject.GetComponent<EnemyMovement>();
+            _animator = GetComponent<Animator>();
+            _rigidBody = GetComponent<Rigidbody2D>();
+            _capsuleCollider = GetComponent<CapsuleCollider2D>();
+            _movement = GetComponent<EnemyMovement>();
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

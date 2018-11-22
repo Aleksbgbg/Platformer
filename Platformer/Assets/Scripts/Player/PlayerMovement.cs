@@ -4,38 +4,45 @@
 
     public class PlayerMovement : MonoBehaviour
     {
-        public PlayerController PlayerController;
-
-        public Animator PlayerAnimator;
-
-        public float Speed = 40.0f;
+        [SerializeField]
+        private float _speed = 40.0f;
 
         private float _horizontalMovement;
 
+        private bool _crouch;
+
         private bool _jump;
 
-        private bool _crouch;
+        private Animator _playerAnimator;
+
+        private PlayerController _playerController;
 
         public void OnLand()
         {
-            PlayerAnimator.SetBool("IsJumping", false);
+            _playerAnimator.SetBool("IsJumping", false);
         }
 
         public void OnCrouchChanged(bool isCrouching)
         {
-            PlayerAnimator.SetBool("IsCrouching", isCrouching);
+            _playerAnimator.SetBool("IsCrouching", isCrouching);
+        }
+
+        private void Awake()
+        {
+            _playerAnimator = GetComponentInChildren<Animator>();
+            _playerController = GetComponent<PlayerController>();
         }
 
         private void Update()
         {
-            _horizontalMovement = Input.GetAxisRaw("Horizontal") * Speed;
+            _horizontalMovement = Input.GetAxisRaw("Horizontal") * _speed;
 
-            PlayerAnimator.SetFloat("Speed", Mathf.Abs(_horizontalMovement));
+            _playerAnimator.SetFloat("Speed", Mathf.Abs(_horizontalMovement));
 
             if (Input.GetButtonDown("Jump"))
             {
                 _jump = true;
-                PlayerAnimator.SetBool("IsJumping", true);
+                _playerAnimator.SetBool("IsJumping", true);
             }
 
             if (Input.GetButtonDown("Crouch"))
@@ -50,7 +57,7 @@
 
         private void FixedUpdate()
         {
-            PlayerController.Move(_horizontalMovement * Time.fixedDeltaTime, _crouch, _jump);
+            _playerController.Move(_horizontalMovement * Time.fixedDeltaTime, _crouch, _jump);
             _jump = false;
         }
     }
