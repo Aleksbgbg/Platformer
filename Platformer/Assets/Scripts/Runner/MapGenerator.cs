@@ -1,4 +1,4 @@
-﻿namespace Scripts.Runner
+﻿    namespace Scripts.Runner
 {
     using System.Collections.Generic;
 
@@ -20,7 +20,7 @@
 
         private void ActivateLevel()
         {
-            ActivateLevel(Random.Range(0, _levels.Length));
+            ActivateLevel(Random.Range(1, _levels.Length));
         }
 
         private void ActivateLevel(int index)
@@ -37,7 +37,7 @@
 
         private void Awake()
         {
-            ActivateLevel(1);
+            ActivateLevel(0);
         }
 
         private void Update()
