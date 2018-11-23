@@ -14,7 +14,7 @@
         [SerializeField]
         private Transform[] _levels;
 
-        private float _spawnPosition;
+        private float _spawnPosition = 1.0f;
 
         private Level _activeLevel;
 
@@ -42,7 +42,7 @@
 
         private void Update()
         {
-            if (_levelQueue.Count > 1 &&
+            if (_levelQueue.Count > 2 &&
                 !_levelQueue.Peek().IsVisible)
             {
                 _levelQueue.Dequeue().Destroy();
