@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main.unity
     guid: 1588e55a7dce9fb4ebd0de27982ceae3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Runner.unity
     guid: 4d993fe81f9919743a4287cffc439cab
   - enabled: 1

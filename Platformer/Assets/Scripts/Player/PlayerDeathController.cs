@@ -23,6 +23,11 @@
             }
         }
 
+        public void DieFast()
+        {
+            OnDeathFinished();
+        }
+
         public void OnDeathFinished()
         {
             Destroy(gameObject.transform.parent.gameObject); // Shortcut for traversing the hierarchy via Transform(s)

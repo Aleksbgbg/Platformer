@@ -618,7 +618,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: df1ee929-cbd8-48ef-8dcf-a048ae0383d0
   projectName: Platformer
   organizationId: unity_2vmaadltp_dnea
