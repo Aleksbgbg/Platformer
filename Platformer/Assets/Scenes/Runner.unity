@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 272878705}
   - component: {fileID: 272878704}
   - component: {fileID: 272878707}
+  - component: {fileID: 272878708}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -221,10 +222,10 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 26.991467
+  orthographic: 1
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -267,6 +268,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movement: 5
+  _player: {fileID: 1510416239}
+--- !u!114 &272878708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 272878703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 16
+  m_RefResolutionX: 320
+  m_RefResolutionY: 180
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1001 &399670067
 Prefab:
   m_ObjectHideFlags: 0
@@ -451,6 +472,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 399670067}
   m_Script: {fileID: 11500000, guid: 876b251d37834b34887a0321a6242388, type: 3}
+--- !u!4 &1510416239 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4078168300891838, guid: 6e8e244b2c4b3ff418df9deff8191dbe,
+    type: 2}
+  m_PrefabInternal: {fileID: 1638137723}
 --- !u!1001 &1638137723
 Prefab:
   m_ObjectHideFlags: 0
